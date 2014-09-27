@@ -22,6 +22,13 @@ class ViewController: UIViewController {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         println(touches)
+
+		if touches.count == 1 {
+			if let touch = touches.anyObject() as? UITouch {
+				addPoint(touch.locationInView(self.view))
+			}
+		}
+
     }
 
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
@@ -30,6 +37,9 @@ class ViewController: UIViewController {
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         println(touches)
+
+		let touchGeometry = TouchArcGeometry(start: startPoint(), middle: middlePoint(), end: endPoint())
+		// TODO: something here :)
     }
 
 }

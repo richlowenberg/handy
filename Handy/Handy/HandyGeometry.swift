@@ -24,20 +24,18 @@ struct TouchArcGeometry {
         self.middle = middle;
         self.end = end;
     }
-}
-
-class HandyGeometry {
     
-    func handPositionFromTouchArc(touchArc:TouchArcGeometry) -> HandPosition {
-        let xLength = touchArc.start.x - touchArc.end.x
-        let yLength = touchArc.start.y - touchArc.end.y
-        let hypotenuse = sqrt(xLength * xLength + yLength * yLength);
+    func distanceFromTouchArcHypotenuse() -> CGFloat {
+        let xLength:CGFloat = self.start.x - self.end.x
+        let yLength:CGFloat = self.start.y - self.end.y
+        let hypotenuse:CGFloat = sqrt(xLength * xLength + yLength * yLength);
         
+        // radians are degrees * 0.0174532925
+        // tan(angle) = opposite / adjacent
+        let angle = atan(xLength/yLength)
         
-        return HandPosition.left
+        let middleX = (self.middle.y - self.start.y) * tan(angle)
+        
+        return self.middle.x - (self.start.x + middleX)
     }
-    
 }
-
-let geometryCalculator:HandyGeometry = HandyGeometry()
-let position:HandPosition = geometryCalculator.handPositionFromTouchArc(TouchArcGeometry(start: CGPointMake(0, 0), middle: CGPointMake(30, 30), end: CGPointMake(50, 65)));

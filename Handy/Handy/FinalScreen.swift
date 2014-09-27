@@ -10,26 +10,38 @@ import UIKit
 
 class FinalScreen : UIViewController {
     
+    var handPosition:HandPosition?
+    var confidence:CGFloat?
+    
     @IBOutlet var leftHandImage:UIImageView!
     @IBOutlet var rightHandImage:UIImageView!
     
     func showResults(handPosition:HandPosition, confidence:CGFloat) {
+        self.handPosition = handPosition;
+        self.confidence = confidence
+    }
+    
+    override func viewDidLoad() {
         self.title = "HANDY"
         
-        switch(handPosition) {
-        case .left:
-            let image = UIImage(named: "rightHand")
-            self.leftHandImage.hidden = false
-            self.rightHandImage.hidden = true
-            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
-            self.navigationItem.leftBarButtonItem = nil
-            
-        case .right:
-            let image = UIImage(named: "leftHand")
-            self.leftHandImage.hidden = true
-            self.rightHandImage.hidden = false
-            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
-            self.navigationItem.rightBarButtonItem = nil
+        if let handPos = self.handPosition {
+            switch(handPos) {
+            case .left:
+                let image = UIImage(named: "rightHand")
+                self.leftHandImage.hidden = false
+                self.rightHandImage.hidden = true
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
+                self.navigationItem.leftBarButtonItem = nil
+                self.navigationItem.backBarButtonItem = nil
+                
+            case .right:
+                let image = UIImage(named: "leftHand")
+                self.leftHandImage.hidden = true
+                self.rightHandImage.hidden = false
+                self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
+                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.backBarButtonItem = nil
+            }
         }
     }
     

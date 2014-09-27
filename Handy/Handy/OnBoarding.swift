@@ -120,4 +120,14 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         })
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "finalScreen") {
+            var finalScreen:FinalScreen = segue.destinationViewController as FinalScreen
+            
+            if let handy = handy {
+                finalScreen.showResults(handy.side, confidence: handy.confidence)
+            }
+        }
+    }
+    
 }

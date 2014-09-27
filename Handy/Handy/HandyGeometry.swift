@@ -43,7 +43,7 @@ struct TouchArcGeometry {
 class HandyGeometry {
 
 	var points = [CGPoint]()
-	var confidence = 0.0
+    var confidence:CGFloat = 0.0
 	var side: HandPosition = .right
 
 
@@ -53,10 +53,19 @@ class HandyGeometry {
 
 		for point: CGPoint in points {
 			let geoObject = TouchArcGeometry(start: startPoint(), middle: point, end: endPoint())
-			totalDistance = totalDistance + geoObject.distanceFromTouchArcHypotenuse()
+			let distance = geoObject.distanceFromTouchArcHypotenuse()
+			println(distance)
+			totalDistance = totalDistance + distance
 		}
 
-		if totalDistance > 0 {
+		println("totalDistance: \(totalDistance)")
+
+		let avg = CGFloat(totalDistance) / CGFloat(points.count)
+        
+        self.confidence = abs(avg / UIScreen.mainScreen().bounds.size.width);
+		println("avg: \(avg)")
+
+		if avg > 0 {
 			side = .left
 		} else {
 			side = .right

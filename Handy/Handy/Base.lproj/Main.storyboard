@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-or-um2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-or-um2">
                                 <rect key="frame" x="100" y="289" width="400" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4qE-dN-t0y"/>
@@ -26,7 +26,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euq-8k-Jys">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euq-8k-Jys">
                                 <rect key="frame" x="100" y="320" width="400" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="SMu-kv-FaO"/>
@@ -41,6 +41,8 @@
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="EqH-or-um2" secondAttribute="centerY" id="ZmO-1p-4qN"/>
                             <constraint firstAttribute="centerX" secondItem="EqH-or-um2" secondAttribute="centerX" id="pQt-sM-8lP"/>
+                            <constraint firstAttribute="centerX" secondItem="euq-8k-Jys" secondAttribute="centerX" id="y5U-Gf-Q7i"/>
+                            <constraint firstItem="euq-8k-Jys" firstAttribute="top" secondItem="EqH-or-um2" secondAttribute="bottom" constant="10" id="yXA-OH-XNm"/>
                         </constraints>
                     </view>
                     <connections>

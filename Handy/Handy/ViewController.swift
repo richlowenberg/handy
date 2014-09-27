@@ -10,10 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet var resultLabel:UILabel?;
-    @IBOutlet var confidenceLabel:UILabel?;
+    @IBOutlet var resultLabel:UILabel!
+    @IBOutlet var confidenceLabel:UILabel!
 
-	let handy = HandyGeometry()
+	var handy: HandyGeometry?
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,12 +25,16 @@ class ViewController: UIViewController {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
 //        println(touches)
+
+		handy = HandyGeometry()
 	}
 
     override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
 		if touches.count == 1 {
 			if let touch = touches.anyObject() as? UITouch {
-				handy.addPoint(touch.locationInView(self.view))
+				if let handy = handy {
+					handy.addPoint(touch.locationInView(self.view))
+				}
 			}
 		}
     }
@@ -38,9 +42,13 @@ class ViewController: UIViewController {
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
 //        println(touches)
 
-		handy.calculateConfidence()
+		if let handy = handy {
+			handy.calculateConfidence()
+			resultLabel.text = "\(handy.side.toRaw().capitalizedString) handed."
+            confidenceLabel.text = "\(ceil(handy.confidence*500))% confidence."
+		}
 
-		println("User is \(handy.side.toRaw()) handed. Calculated with \(handy.confidence * 100)% confidence")
+//		println(resultLabel.text)
 	}
 
 }

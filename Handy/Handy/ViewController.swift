@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 
 		if let handy = handy {
 			handy.calculateConfidence()
-			resultLabel.text = "\(handy.side.toRaw().uppercaseString) handed. S: \(handy.startPoint()), E: \(handy.endPoint())"
+			resultLabel.text = "\(handy.side.toRaw().capitalizedString) handed."
 		}
 
 //		println(resultLabel.text)

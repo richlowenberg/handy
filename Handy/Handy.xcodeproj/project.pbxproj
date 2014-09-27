@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9BDF471319D748760032413C /* HandyGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF471219D748760032413C /* HandyGeometry.swift */; };
 		AA77561A19D7422900C74900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77561919D7422900C74900 /* AppDelegate.swift */; };
 		AA77561C19D7422900C74900 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77561B19D7422900C74900 /* ViewController.swift */; };
 		AA77561F19D7422900C74900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77561D19D7422900C74900 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9BDF471219D748760032413C /* HandyGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandyGeometry.swift; sourceTree = "<group>"; };
 		AA77561419D7422900C74900 /* Handy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA77561819D7422900C74900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA77561919D7422900C74900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				AA77561919D7422900C74900 /* AppDelegate.swift */,
+				9BDF471219D748760032413C /* HandyGeometry.swift */,
 				AA77561B19D7422900C74900 /* ViewController.swift */,
 				AA77561D19D7422900C74900 /* Main.storyboard */,
 				AA77562019D7422900C74900 /* Images.xcassets */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BDF471319D748760032413C /* HandyGeometry.swift in Sources */,
 				AA77561C19D7422900C74900 /* ViewController.swift in Sources */,
 				AA77561A19D7422900C74900 /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				AA77563519D7422900C74900 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AA77563619D7422900C74900 /* Build configuration list for PBXNativeTarget "HandyTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				AA77563819D7422900C74900 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

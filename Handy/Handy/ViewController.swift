@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var resultLabel:UILabel?;
+
+	let handy = HandyGeometry()
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
 
 		if touches.count == 1 {
 			if let touch = touches.anyObject() as? UITouch {
-				addPoint(touch.locationInView(self.view))
+				handy.addPoint(touch.locationInView(self.view))
 			}
 		}
 
@@ -38,10 +40,10 @@ class ViewController: UIViewController {
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         println(touches)
 
-		let touchGeometry = TouchArcGeometry(start: startPoint(), middle: middlePoint(), end: endPoint())
-		// TODO: something here :)
-        println(touchGeometry)
-    }
+		handy.calculateConfidence()
+
+		println("User is \(handy.side.toRaw()) handed. Calculated with \(handy.confidence * 100)% confidence")
+	}
 
 }
 

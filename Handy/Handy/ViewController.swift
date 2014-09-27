@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet var confidenceLabel:UILabel!
 
 	var handy: HandyGeometry?
+    var confidenceMetrics:[CGFloat] = []
     
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -45,11 +46,18 @@ class ViewController: UIViewController {
 		if let handy = handy {
 			handy.calculateConfidence()
 			resultLabel.text = "\(handy.side.toRaw().capitalizedString) handed."
-            confidenceLabel.text = "\(ceil(handy.confidence*500))% confidence."
+            confidenceLabel.text = "\(ceil(handy.confidence*100))% confidence."
+            
+            confidenceMetrics.append(handy.confidence)
 		}
 
-//		println(resultLabel.text)
+		println("Average: \(self.averageConfidence())")
 	}
-
+    
+    func averageConfidence() -> CGFloat {
+        return confidenceMetrics.reduce(0.0, combine: { (total, next) -> CGFloat in
+            return total + next
+        })
+    }
 }
 

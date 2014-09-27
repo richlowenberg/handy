@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9BDF471319D748760032413C /* HandyGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF471219D748760032413C /* HandyGeometry.swift */; };
+		9BDF471519D76F760032413C /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF471419D76F760032413C /* OnBoarding.swift */; };
+		9BDF471719D7779C0032413C /* FinalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF471619D7779C0032413C /* FinalScreen.swift */; };
 		AA77561A19D7422900C74900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77561919D7422900C74900 /* AppDelegate.swift */; };
 		AA77561C19D7422900C74900 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77561B19D7422900C74900 /* ViewController.swift */; };
 		AA77561F19D7422900C74900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77561D19D7422900C74900 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		9BDF471219D748760032413C /* HandyGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HandyGeometry.swift; sourceTree = "<group>"; };
+		9BDF471419D76F760032413C /* OnBoarding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoarding.swift; sourceTree = "<group>"; };
+		9BDF471619D7779C0032413C /* FinalScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalScreen.swift; sourceTree = "<group>"; };
 		AA77561419D7422900C74900 /* Handy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA77561819D7422900C74900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA77561919D7422900C74900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +86,9 @@
 				AA77561919D7422900C74900 /* AppDelegate.swift */,
 				9BDF471219D748760032413C /* HandyGeometry.swift */,
 				AA77561B19D7422900C74900 /* ViewController.swift */,
+				9BDF471619D7779C0032413C /* FinalScreen.swift */,
 				AA77561D19D7422900C74900 /* Main.storyboard */,
+				9BDF471419D76F760032413C /* OnBoarding.swift */,
 				AA77562019D7422900C74900 /* Images.xcassets */,
 				AA77562219D7422900C74900 /* LaunchScreen.xib */,
 				AA77561719D7422900C74900 /* Supporting Files */,
@@ -217,6 +223,8 @@
 			files = (
 				9BDF471319D748760032413C /* HandyGeometry.swift in Sources */,
 				AA77561C19D7422900C74900 /* ViewController.swift in Sources */,
+				9BDF471519D76F760032413C /* OnBoarding.swift in Sources */,
+				9BDF471719D7779C0032413C /* FinalScreen.swift in Sources */,
 				AA77561A19D7422900C74900 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -61,17 +61,14 @@ class HandyGeometry {
 		println("totalDistance: \(totalDistance)")
 
 		let avg = CGFloat(totalDistance) / CGFloat(points.count)
-        
-        self.confidence = abs(avg / UIScreen.mainScreen().bounds.size.width);
-		println("avg: \(avg)")
 
 		if avg > 0 {
 			side = .left
 		} else {
 			side = .right
-		}
-
-		// TODO: figure out confidence
+        }
+        
+        self.confidence = abs(avg / UIScreen.mainScreen().bounds.size.width);
 	}
 
 	func addPoint(point:CGPoint) {

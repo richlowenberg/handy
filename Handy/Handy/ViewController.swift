@@ -9,17 +9,28 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var resultLabel:UILabel?;
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
+		
+        if let resultLabel = resultLabel? {
+            resultLabel.text = "Swipe me!"
+        }
 	}
+    
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        println(touches)
+    }
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
-	}
-
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
+        println(touches)
+    }
+    
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
+        println(touches)
+    }
 
 }
 

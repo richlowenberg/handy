@@ -21,7 +21,7 @@ class FinalScreen : UIViewController {
         self.confidence = confidence
     }
     
-    override func viewDidLoad() {
+    override func viewWillAppear(animated:Bool) {
         self.title = "HANDY"
         
         if let handPos = self.handPosition {

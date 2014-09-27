@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet var resultLabel:UILabel?;
+    @IBOutlet var confidenceLabel:UILabel?;
 
 	let handy = HandyGeometry()
     

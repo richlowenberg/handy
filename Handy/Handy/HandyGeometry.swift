@@ -53,10 +53,17 @@ class HandyGeometry {
 
 		for point: CGPoint in points {
 			let geoObject = TouchArcGeometry(start: startPoint(), middle: point, end: endPoint())
-			totalDistance = totalDistance + geoObject.distanceFromTouchArcHypotenuse()
+			let distance = geoObject.distanceFromTouchArcHypotenuse()
+			println(distance)
+			totalDistance = totalDistance + distance
 		}
 
-		if totalDistance > 0 {
+		println("totalDistance: \(totalDistance)")
+
+		let avg = Double(totalDistance) / Double(points.count)
+		println("avg: \(avg)")
+
+		if avg > 0 {
 			side = .left
 		} else {
 			side = .right

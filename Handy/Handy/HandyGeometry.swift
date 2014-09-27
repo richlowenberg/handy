@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-enum handPosition {
-    .left,
-    .right
+enum HandPosition {
+    case left
+    case right
 }
 
 struct TouchArcGeometry {
@@ -28,10 +28,16 @@ struct TouchArcGeometry {
 
 class HandyGeometry {
     
-    func handPositionFromTouchArc(touchArc:TouchArcGeometry) -> handPosition {
+    func handPositionFromTouchArc(touchArc:TouchArcGeometry) -> HandPosition {
         let xLength = touchArc.start.x - touchArc.end.x
         let yLength = touchArc.start.y - touchArc.end.y
         let hypotenuse = sqrt(xLength * xLength + yLength * yLength);
+        
+        
+        return HandPosition.left
     }
     
 }
+
+let geometryCalculator:HandyGeometry = HandyGeometry()
+let position:HandPosition = geometryCalculator.handPositionFromTouchArc(TouchArcGeometry(start: CGPointMake(0, 0), middle: CGPointMake(30, 30), end: CGPointMake(50, 65)));

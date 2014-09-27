@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-enum HandPosition {
-    case left
-    case right
+enum HandPosition: String {
+	case left = "left"
+	case right = "right"
 }
 
 struct TouchArcGeometry {
@@ -38,4 +38,49 @@ struct TouchArcGeometry {
         
         return self.middle.x - (self.start.x + middleX)
     }
+}
+
+class HandyGeometry {
+
+	var points = [CGPoint]()
+	var confidence = 0.0
+	var side: HandPosition = .right
+
+
+	func calculateConfidence() {
+
+		var totalDistance:CGFloat = 0.0
+
+		for point: CGPoint in points {
+			let geoObject = TouchArcGeometry(start: startPoint(), middle: point, end: endPoint())
+			totalDistance = totalDistance + geoObject.distanceFromTouchArcHypotenuse()
+		}
+
+		if totalDistance > 0 {
+			side = .left
+		} else {
+			side = .right
+		}
+
+		// TODO: figure out confidence
+	}
+
+	func addPoint(point:CGPoint) {
+		points.append(point)
+	}
+
+	func startPoint() -> CGPoint {
+		if points.count == 0 {
+			return CGPointZero
+		}
+		return points[0]
+	}
+
+	func endPoint() -> CGPoint {
+		if points.count == 0 {
+			return CGPointZero
+		}
+		return points[points.count - 1]
+	}
+	
 }

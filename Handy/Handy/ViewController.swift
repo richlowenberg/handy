@@ -23,22 +23,19 @@ class ViewController: UIViewController {
 	}
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
-        println(touches)
+//        println(touches)
+	}
 
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
 		if touches.count == 1 {
 			if let touch = touches.anyObject() as? UITouch {
 				handy.addPoint(touch.locationInView(self.view))
 			}
 		}
-
-    }
-
-    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
-        println(touches)
     }
     
     override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
-        println(touches)
+//        println(touches)
 
 		handy.calculateConfidence()
 

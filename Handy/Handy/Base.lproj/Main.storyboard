@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-or-um2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="YOU ARE AMBIDEXTROUS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EqH-or-um2">
                                 <rect key="frame" x="100" y="78" width="400" height="74"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="4qE-dN-t0y"/>
@@ -26,6 +26,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="100" y="150" width="400" height="21"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="euq-8k-Jys">
                                 <rect key="frame" x="100" y="320" width="400" height="21"/>
@@ -37,20 +40,76 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-sF-mdd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rightHanded" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-sF-mdd">
                                 <rect key="frame" x="150" y="220" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="aU5-gd-aWA"/>
+                                    <constraint firstAttribute="height" constant="300" id="iG0-JR-RlY"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="aU5-gd-aWA"/>
+                                        <exclude reference="iG0-JR-RlY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="aU5-gd-aWA"/>
+                                        <include reference="iG0-JR-RlY"/>
+                                    </mask>
+                                </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="voJ-Ia-zO1">
-                                <rect key="frame" x="180" y="236" width="240" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="leftHanded" translatesAutoresizingMaskIntoConstraints="NO" id="voJ-Ia-zO1">
+                                <rect key="frame" x="120" y="181" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="dO5-SG-Y7E"/>
+                                    <constraint firstAttribute="height" constant="300" id="wVv-bO-bzR"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dO5-SG-Y7E"/>
+                                        <exclude reference="wVv-bO-bzR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="dO5-SG-Y7E"/>
+                                        <include reference="wVv-bO-bzR"/>
+                                    </mask>
+                                </variation>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="voJ-Ia-zO1" secondAttribute="centerY" constant="69" id="31b-i9-wV7">
+                                <variation key="heightClass=regular" constant="30"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="BSV-sF-mdd" secondAttribute="centerX" id="Ye6-yv-hfR"/>
                             <constraint firstAttribute="centerY" secondItem="EqH-or-um2" secondAttribute="centerY" id="ZmO-1p-4qN"/>
+                            <constraint firstAttribute="centerX" secondItem="voJ-Ia-zO1" secondAttribute="centerX" constant="30" id="bzz-6V-ckU">
+                                <variation key="heightClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="centerY" secondItem="BSV-sF-mdd" secondAttribute="centerY" constant="30" id="iZA-31-cIV"/>
                             <constraint firstAttribute="centerX" secondItem="EqH-or-um2" secondAttribute="centerX" id="pQt-sM-8lP"/>
                             <constraint firstAttribute="centerX" secondItem="euq-8k-Jys" secondAttribute="centerX" id="y5U-Gf-Q7i"/>
                             <constraint firstItem="euq-8k-Jys" firstAttribute="top" secondItem="EqH-or-um2" secondAttribute="bottom" constant="10" id="yXA-OH-XNm"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="31b-i9-wV7"/>
+                                <exclude reference="bzz-6V-ckU"/>
+                                <exclude reference="Ye6-yv-hfR"/>
+                                <exclude reference="iZA-31-cIV"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="31b-i9-wV7"/>
+                                <include reference="bzz-6V-ckU"/>
+                                <include reference="Ye6-yv-hfR"/>
+                                <include reference="iZA-31-cIV"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Z7f-ju-KLT"/>
                     <connections>
@@ -60,7 +119,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923" y="190"/>
+            <point key="canvasLocation" x="943" y="216"/>
         </scene>
         <!--On Boarding-->
         <scene sceneID="5Bb-sX-amV">
@@ -173,4 +232,8 @@
             <point key="canvasLocation" x="-658" y="216"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="leftHanded" width="183" height="185"/>
+        <image name="rightHanded" width="183" height="185"/>
+    </resources>
 </document>

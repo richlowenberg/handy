@@ -117,7 +117,7 @@
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="EqH-or-um2" secondAttribute="trailing" constant="-20" id="39h-Jf-iub"/>
                             <constraint firstAttribute="trailingMargin" secondItem="euq-8k-Jys" secondAttribute="trailing" constant="-44" id="3HP-wK-t3V">
-                                <variation key="widthClass=compact" constant="40"/>
+                                <variation key="widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="euq-8k-Jys" secondAttribute="bottom" constant="128.5" id="4U9-sw-mOe">
                                 <variation key="widthClass=compact" constant="120"/>
@@ -127,7 +127,7 @@
                                 <variation key="heightClass=regular" constant="100"/>
                             </constraint>
                             <constraint firstItem="euq-8k-Jys" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-44" id="Dda-Sa-dyz">
-                                <variation key="widthClass=compact" constant="40"/>
+                                <variation key="widthClass=compact" constant="30"/>
                             </constraint>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="euq-8k-Jys" secondAttribute="bottom" constant="562.5" id="Gq7-68-rsD">
                                 <variation key="heightClass=regular" constant="150"/>
@@ -139,7 +139,7 @@
                                 <variation key="heightClass=regular" constant="50"/>
                             </constraint>
                             <constraint firstItem="EqH-or-um2" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="VVd-UQ-Gky">
-                                <variation key="widthClass=compact" constant="80"/>
+                                <variation key="widthClass=compact" constant="50"/>
                             </constraint>
                             <constraint firstAttribute="centerY" secondItem="BSV-sF-mdd" secondAttribute="centerY" constant="0.5" id="Wdx-bT-6Ej"/>
                             <constraint firstAttribute="centerX" secondItem="BSV-sF-mdd" secondAttribute="centerX" id="Ye6-yv-hfR"/>

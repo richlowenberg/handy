@@ -31,11 +31,16 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         
         self.resetPages()
         
-        let swipe = UISwipeGestureRecognizer(target: self, action: "swipe:")
-        swipe.direction = .Up | .Down
-        swipe.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(swipe)
-        
+		let upSwipe = UISwipeGestureRecognizer(target: self, action: "swipe:")
+		upSwipe.direction = UISwipeGestureRecognizerDirection.Up
+		upSwipe.cancelsTouchesInView = false
+		self.view.addGestureRecognizer(upSwipe)
+
+		let downSwipe = UISwipeGestureRecognizer(target: self, action: "swipe:")
+		downSwipe.direction = UISwipeGestureRecognizerDirection.Down
+		downSwipe.cancelsTouchesInView = false
+		self.view.addGestureRecognizer(downSwipe)
+
         UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
             self.baseConstraint.constant = 35
             self.view.layoutIfNeeded()
@@ -47,11 +52,16 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
 	}
     
     func swipe(recognizer:UISwipeGestureRecognizer) {
+
+		println(recognizer.direction.toRaw())
+
         switch (recognizer.direction) {
-        case UISwipeGestureRecognizerDirection.Down:
-            showPage(currentPage-1)
-        default:
+		case UISwipeGestureRecognizerDirection.Down:
+			showPage(currentPage-1)
+		case UISwipeGestureRecognizerDirection.Up:
 			showPage(currentPage+1)
+        default:
+			println("uh oh")
         }
     }
     

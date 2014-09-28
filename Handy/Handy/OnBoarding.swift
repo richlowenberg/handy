@@ -26,7 +26,10 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
 
 	override func viewWillAppear(animated: Bool) {
         self.title = "HANDY"
-        self.showPage(0)
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.grayColor()
+        
+        self.resetPages()
         
         let swipe = UISwipeGestureRecognizer(target: self, action: "swipe:")
         swipe.direction = .Up | .Down
@@ -50,6 +53,16 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         default:
 			showPage(currentPage+1)
         }
+    }
+    
+    func resetPages() {
+        self.text1.alpha = 0
+        self.text2.alpha = 0
+        self.text3.alpha = 0
+        self.text4.alpha = 0
+        self.button.alpha = 0
+        
+        self.showPage(0)
     }
     
     func showPage(pageNumber:Int) {
@@ -77,10 +90,6 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
                 
-                UIView.animateWithDuration(0.5, delay: 2.0, options: nil, animations: { () -> Void in
-                    self.scrollDown.alpha = 0
-                    }, completion: nil)
-                
             case 2:
                 self.fadeView(text1, opacity: 1)
                 self.fadeView(text2, opacity: 1)
@@ -94,19 +103,23 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
                 self.fadeView(text3, opacity: 1)
                 self.fadeView(text4, opacity: 1)
                 self.fadeView(button, opacity: 1)
+                
+                UIView.animateWithDuration(0.5, delay: 0.0, options: nil, animations: { () -> Void in
+                    self.scrollDown.alpha = 0
+                    }, completion: nil)
             }
             self.validateLabelsPosition()
         }
     }
     
     func fadeView(view:UIView, opacity:CGFloat) {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
             view.alpha = opacity
         })
     }
     
     func validateLabelsPosition() {
-        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: nil, animations: ({
+        UIView.animateWithDuration(0.8, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: nil, animations: ({
             let multiplier:CGFloat = CGFloat(self.currentPage)
             self.yConstraint.constant = 220.0 - (multiplier * 35)
             self.view.layoutIfNeeded()

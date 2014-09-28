@@ -11,7 +11,6 @@
 		9BDF471519D76F760032413C /* OnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF471419D76F760032413C /* OnBoarding.swift */; };
 		9BDF471719D7779C0032413C /* FinalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDF471619D7779C0032413C /* FinalScreen.swift */; };
 		AA77561A19D7422900C74900 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77561919D7422900C74900 /* AppDelegate.swift */; };
-		AA77561C19D7422900C74900 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA77561B19D7422900C74900 /* ViewController.swift */; };
 		AA77561F19D7422900C74900 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA77561D19D7422900C74900 /* Main.storyboard */; };
 		AA77562119D7422900C74900 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA77562019D7422900C74900 /* Images.xcassets */; };
 		AA77562419D7422900C74900 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA77562219D7422900C74900 /* LaunchScreen.xib */; };
@@ -35,7 +34,6 @@
 		AA77561419D7422900C74900 /* Handy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Handy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA77561819D7422900C74900 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA77561919D7422900C74900 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AA77561B19D7422900C74900 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AA77561E19D7422900C74900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AA77562019D7422900C74900 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AA77562319D7422900C74900 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 			children = (
 				AA77561919D7422900C74900 /* AppDelegate.swift */,
 				9BDF471219D748760032413C /* HandyGeometry.swift */,
-				AA77561B19D7422900C74900 /* ViewController.swift */,
 				9BDF471619D7779C0032413C /* FinalScreen.swift */,
 				AA77561D19D7422900C74900 /* Main.storyboard */,
 				9BDF471419D76F760032413C /* OnBoarding.swift */,
@@ -222,7 +219,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BDF471319D748760032413C /* HandyGeometry.swift in Sources */,
-				AA77561C19D7422900C74900 /* ViewController.swift in Sources */,
 				9BDF471519D76F760032413C /* OnBoarding.swift in Sources */,
 				9BDF471719D7779C0032413C /* FinalScreen.swift in Sources */,
 				AA77561A19D7422900C74900 /* AppDelegate.swift in Sources */,

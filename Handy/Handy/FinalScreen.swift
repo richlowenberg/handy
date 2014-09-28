@@ -36,7 +36,7 @@ class FinalScreen : UIViewController {
                 self.leftHandImage.hidden = true
                 self.rightHandImage.hidden = false
                 self.navigationItem.rightBarButtonItem = nil
-                self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
+                self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "TRY AGAIN", style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
                 self.navigationItem.backBarButtonItem = nil
                 
             case .right:
@@ -44,7 +44,7 @@ class FinalScreen : UIViewController {
                 self.leftHandImage.hidden = false
                 self.rightHandImage.hidden = true
                 self.navigationItem.leftBarButtonItem = nil
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TRY AGAIN", style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
                 self.navigationItem.backBarButtonItem = nil
             }
         }

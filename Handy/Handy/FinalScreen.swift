@@ -12,7 +12,7 @@ class FinalScreen : UIViewController {
     
     var handPosition:HandPosition?
     var confidence:CGFloat?
-    
+
     @IBOutlet var leftHandImage:UIImageView!
     @IBOutlet var rightHandImage:UIImageView!
     
@@ -20,8 +20,13 @@ class FinalScreen : UIViewController {
         self.handPosition = handPosition;
         self.confidence = confidence
     }
+
+	override func viewDidLoad() {
+		self.navigationItem.hidesBackButton = true
+	}
     
 	override func viewWillAppear(animated: Bool) {
+
         self.title = "HANDY"
         
         if let handPos = self.handPosition {
@@ -44,8 +49,9 @@ class FinalScreen : UIViewController {
             }
         }
     }
-    
+
     func startAgain() {
-        self.performSegueWithIdentifier("home", sender: self)
+		self.navigationController?.popToRootViewControllerAnimated(true)
+//        self.performSegueWithIdentifier("home", sender: self)
     }
 }

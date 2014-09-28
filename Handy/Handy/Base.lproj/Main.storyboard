@@ -297,22 +297,7 @@
                                 <color key="textColor" red="0.1333333333" green="0.75294117650000003" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uM1-LP-nU6">
-                                <rect key="frame" x="200" y="470" width="200" height="60"/>
-                                <color key="backgroundColor" red="0.1333333333" green="0.75294117650000003" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="gdO-Fe-uVI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
-                                <state key="normal" title="TELL ME">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="finalScreen" id="Ors-bX-EGL"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtx-qb-jef">
+                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vtx-qb-jef" userLabel="Scroll down">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow" translatesAutoresizingMaskIntoConstraints="NO" id="gbg-Wv-fvY">
@@ -360,13 +345,17 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="ZAv-IE-7SB" secondAttribute="centerX" id="3Lm-n0-10g"/>
-                                    <constraint firstItem="gbg-Wv-fvY" firstAttribute="top" secondItem="ZAv-IE-7SB" secondAttribute="bottom" constant="-6" id="HYn-tc-N08"/>
+                                    <constraint firstItem="gbg-Wv-fvY" firstAttribute="top" secondItem="ZAv-IE-7SB" secondAttribute="bottom" constant="-6" id="HYn-tc-N08">
+                                        <variation key="widthClass=compact" constant="0.0"/>
+                                    </constraint>
                                     <constraint firstAttribute="centerX" secondItem="gbg-Wv-fvY" secondAttribute="centerX" constant="0.5" id="L49-TR-trF"/>
                                     <constraint firstAttribute="width" constant="200" id="Us0-Jo-azN"/>
                                     <constraint firstAttribute="height" constant="50" id="dIH-MX-Vil">
                                         <variation key="widthClass=compact" constant="70"/>
                                     </constraint>
-                                    <constraint firstAttribute="centerY" secondItem="ZAv-IE-7SB" secondAttribute="centerY" constant="-0.5" id="kby-3A-hCZ"/>
+                                    <constraint firstAttribute="centerY" secondItem="ZAv-IE-7SB" secondAttribute="centerY" constant="-0.5" id="kby-3A-hCZ">
+                                        <variation key="widthClass=compact" constant="10"/>
+                                    </constraint>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="subviews">
@@ -397,6 +386,21 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uM1-LP-nU6">
+                                <rect key="frame" x="200" y="470" width="200" height="60"/>
+                                <color key="backgroundColor" red="0.1333333333" green="0.75294117650000003" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="gdO-Fe-uVI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <state key="normal" title="TELL ME">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="finalScreen" id="Ors-bX-EGL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

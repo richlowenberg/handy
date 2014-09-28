@@ -33,8 +33,9 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         swipe.cancelsTouchesInView = false
         self.view.addGestureRecognizer(swipe)
         
-        UIView.animateWithDuration(2.0, delay: 0.0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
-            self.baseConstraint.constant = 30
+        UIView.animateWithDuration(1.0, delay: 0.0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+            self.baseConstraint.constant = 35
+            self.view.layoutIfNeeded()
         }, completion: nil)
     }
 
@@ -77,6 +78,10 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
                 self.fadeView(text3, opacity: 0)
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
+                
+                UIView.animateWithDuration(0.5, delay: 2.0, options: nil, animations: { () -> Void in
+                    self.scrollDown.alpha = 0
+                    }, completion: nil)
                 
             case 2:
                 self.fadeView(text1, opacity: 1)

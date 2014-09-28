@@ -28,18 +28,18 @@ class FinalScreen : UIViewController {
             switch(handPos) {
             case .left:
                 let image = UIImage(named: "menu")
-                self.leftHandImage.hidden = false
-                self.rightHandImage.hidden = true
-                self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
-                self.navigationItem.leftBarButtonItem = nil
+                self.leftHandImage.hidden = true
+                self.rightHandImage.hidden = false
+                self.navigationItem.rightBarButtonItem = nil
+                self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
                 self.navigationItem.backBarButtonItem = nil
                 
             case .right:
                 let image = UIImage(named: "menu")
-                self.leftHandImage.hidden = true
-                self.rightHandImage.hidden = false
-                self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
-                self.navigationItem.rightBarButtonItem = nil
+                self.leftHandImage.hidden = false
+                self.rightHandImage.hidden = true
+                self.navigationItem.leftBarButtonItem = nil
+                self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: image, style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
                 self.navigationItem.backBarButtonItem = nil
             }
         }

@@ -17,6 +17,7 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var text3:UILabel!
     @IBOutlet var text4:UILabel!
     @IBOutlet var button:UIButton!
+    @IBOutlet var yConstraint:NSLayoutConstraint!
     
     var handy: HandyGeometry?
     var confidenceMetrics:[CGFloat] = []
@@ -57,26 +58,27 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
                 self.fadeView(button, opacity: 0)
                 
             case 1:
-                self.fadeView(text1, opacity: 0)
+                self.fadeView(text1, opacity: 1)
                 self.fadeView(text2, opacity: 1)
                 self.fadeView(text3, opacity: 0)
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
                 
             case 2:
-                self.fadeView(text1, opacity: 0)
-                self.fadeView(text2, opacity: 0)
+                self.fadeView(text1, opacity: 1)
+                self.fadeView(text2, opacity: 1)
                 self.fadeView(text3, opacity: 1)
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
                 
             default:
-                self.fadeView(text1, opacity: 0)
-                self.fadeView(text2, opacity: 0)
-                self.fadeView(text3, opacity: 0)
+                self.fadeView(text1, opacity: 1)
+                self.fadeView(text2, opacity: 1)
+                self.fadeView(text3, opacity: 1)
                 self.fadeView(text4, opacity: 1)
                 self.fadeView(button, opacity: 1)
             }
+            self.validateLabelsPosition()
         }
     }
     
@@ -84,6 +86,14 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             view.alpha = opacity
         })
+    }
+    
+    func validateLabelsPosition() {
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: nil, animations: ({
+            let multiplier:CGFloat = CGFloat(self.currentPage)
+            self.yConstraint.constant = 270.0 - (multiplier * 35)
+            self.view.layoutIfNeeded()
+        }), completion: nil)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

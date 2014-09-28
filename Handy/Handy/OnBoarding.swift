@@ -29,7 +29,7 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         self.showPage(0)
         
         let swipe = UISwipeGestureRecognizer(target: self, action: "swipe:")
-        swipe.direction = UISwipeGestureRecognizerDirection.Left | UISwipeGestureRecognizerDirection.Right
+        swipe.direction = .Up | .Down
         swipe.cancelsTouchesInView = false
         self.view.addGestureRecognizer(swipe)
         
@@ -45,12 +45,10 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
     
     func swipe(recognizer:UISwipeGestureRecognizer) {
         switch (recognizer.direction) {
-        case UISwipeGestureRecognizerDirection.Left:
+        case UISwipeGestureRecognizerDirection.Down:
             showPage(currentPage-1)
-        
         default:
-            showPage(currentPage+1)
-            
+			showPage(currentPage+1)
         }
     }
     

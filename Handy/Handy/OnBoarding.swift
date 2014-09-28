@@ -20,8 +20,8 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
     
     var handy: HandyGeometry?
     var confidenceMetrics:[CGFloat] = []
-    
-    override func viewDidLoad() {
+
+	override func viewWillAppear(animated: Bool) {
         self.title = "HANDY"
         self.showPage(0)
         
@@ -30,6 +30,10 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         swipe.cancelsTouchesInView = false
         self.view.addGestureRecognizer(swipe)
     }
+
+	override func viewWillDisappear(animated: Bool) {
+		self.title = ""
+	}
     
     func swipe(recognizer:UISwipeGestureRecognizer) {
         switch (recognizer.direction) {

@@ -17,12 +17,14 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var text3:UILabel!
     @IBOutlet var text4:UILabel!
     @IBOutlet var button:UIButton!
+    @IBOutlet var scrollDown:UIView!
     @IBOutlet var yConstraint:NSLayoutConstraint!
+    @IBOutlet var baseConstraint:NSLayoutConstraint!
     
     var handy: HandyGeometry?
     var confidenceMetrics:[CGFloat] = []
-    
-    override func viewDidLoad() {
+
+	override func viewWillAppear(animated: Bool) {
         self.title = "HANDY"
         self.showPage(0)
         
@@ -30,7 +32,15 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         swipe.direction = UISwipeGestureRecognizerDirection.Left | UISwipeGestureRecognizerDirection.Right
         swipe.cancelsTouchesInView = false
         self.view.addGestureRecognizer(swipe)
+        
+        UIView.animateWithDuration(2.0, delay: 0.0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+            self.baseConstraint.constant = 30
+        }, completion: nil)
     }
+
+	override func viewWillDisappear(animated: Bool) {
+		self.title = ""
+	}
     
     func swipe(recognizer:UISwipeGestureRecognizer) {
         switch (recognizer.direction) {
@@ -56,6 +66,10 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
                 self.fadeView(text3, opacity: 0)
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
+                
+                UIView.animateWithDuration(0.5, delay: 2.0, options: nil, animations: { () -> Void in
+                    self.scrollDown.alpha = 1
+                }, completion: nil)
                 
             case 1:
                 self.fadeView(text1, opacity: 1)
@@ -91,7 +105,7 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
     func validateLabelsPosition() {
         UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: nil, animations: ({
             let multiplier:CGFloat = CGFloat(self.currentPage)
-            self.yConstraint.constant = 270.0 - (multiplier * 35)
+            self.yConstraint.constant = 220.0 - (multiplier * 35)
             self.view.layoutIfNeeded()
         }), completion: nil)
     }

@@ -17,6 +17,9 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var text3:UILabel!
     @IBOutlet var text4:UILabel!
     @IBOutlet var button:UIButton!
+    @IBOutlet var scrollDown:UIView!
+    @IBOutlet var yConstraint:NSLayoutConstraint!
+    @IBOutlet var baseConstraint:NSLayoutConstraint!
     
     var handy: HandyGeometry?
     var confidenceMetrics:[CGFloat] = []
@@ -29,6 +32,10 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         swipe.direction = .Up | .Down
         swipe.cancelsTouchesInView = false
         self.view.addGestureRecognizer(swipe)
+        
+        UIView.animateWithDuration(2.0, delay: 0.0, options: UIViewAnimationOptions.Repeat | UIViewAnimationOptions.Autoreverse, animations: { () -> Void in
+            self.baseConstraint.constant = 30
+        }, completion: nil)
     }
 
 	override func viewWillDisappear(animated: Bool) {
@@ -58,27 +65,32 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
                 
+                UIView.animateWithDuration(0.5, delay: 2.0, options: nil, animations: { () -> Void in
+                    self.scrollDown.alpha = 1
+                }, completion: nil)
+                
             case 1:
-                self.fadeView(text1, opacity: 0)
+                self.fadeView(text1, opacity: 1)
                 self.fadeView(text2, opacity: 1)
                 self.fadeView(text3, opacity: 0)
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
                 
             case 2:
-                self.fadeView(text1, opacity: 0)
-                self.fadeView(text2, opacity: 0)
+                self.fadeView(text1, opacity: 1)
+                self.fadeView(text2, opacity: 1)
                 self.fadeView(text3, opacity: 1)
                 self.fadeView(text4, opacity: 0)
                 self.fadeView(button, opacity: 0)
                 
             default:
-                self.fadeView(text1, opacity: 0)
-                self.fadeView(text2, opacity: 0)
-                self.fadeView(text3, opacity: 0)
+                self.fadeView(text1, opacity: 1)
+                self.fadeView(text2, opacity: 1)
+                self.fadeView(text3, opacity: 1)
                 self.fadeView(text4, opacity: 1)
                 self.fadeView(button, opacity: 1)
             }
+            self.validateLabelsPosition()
         }
     }
     
@@ -86,6 +98,14 @@ class OnBoarding : UIViewController, UIGestureRecognizerDelegate {
         UIView.animateWithDuration(0.5, animations: { () -> Void in
             view.alpha = opacity
         })
+    }
+    
+    func validateLabelsPosition() {
+        UIView.animateWithDuration(0.5, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.0, options: nil, animations: ({
+            let multiplier:CGFloat = CGFloat(self.currentPage)
+            self.yConstraint.constant = 220.0 - (multiplier * 35)
+            self.view.layoutIfNeeded()
+        }), completion: nil)
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {

@@ -15,6 +15,7 @@ class FinalScreen : UIViewController {
 
     @IBOutlet var leftHandImage:UIImageView!
     @IBOutlet var rightHandImage:UIImageView!
+    @IBOutlet var resultLabel:UILabel!
     
     func showResults(handPosition:HandPosition, confidence:CGFloat) {
         self.handPosition = handPosition;
@@ -38,6 +39,7 @@ class FinalScreen : UIViewController {
                 self.navigationItem.rightBarButtonItem = nil
                 self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "TRY AGAIN", style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
                 self.navigationItem.backBarButtonItem = nil
+                self.resultLabel.text = "YOU ARE LEFT-HANDED"
                 
             case .right:
                 let image = UIImage(named: "menu")
@@ -46,6 +48,7 @@ class FinalScreen : UIViewController {
                 self.navigationItem.leftBarButtonItem = nil
                 self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "TRY AGAIN", style: UIBarButtonItemStyle.Plain, target: self, action: "startAgain")
                 self.navigationItem.backBarButtonItem = nil
+                self.resultLabel.text = "YOU ARE RIGHT-HANDED"
             }
         }
     }
